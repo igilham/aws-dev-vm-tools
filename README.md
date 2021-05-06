@@ -28,9 +28,9 @@ Copy Git config (`~/.gitconfig`) over from local machine.
 
 Copy NPM config (`~/.npmrc`) over from local machine.
 
-Create an SSH key and add to GitHub. [https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent]
+[Create an SSH key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and add to GitHub.
 
-Create a GPG key, add to GitHub and configure in Git client [https://docs.github.com/en/github/authenticating-to-github/generating-a-new-gpg-key]
+[Create a GPG key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-gpg-key), add to GitHub and configure in Git client.
 
 Add to the bottom of the bashrc file:
 
@@ -61,3 +61,7 @@ awsdev -t TOKEN_CODE [start|stop|describe]
 ```
 
 The public DNS address can be added to your SSH config as needed.
+
+## Using the machine for VSCode Remote SSH
+
+If you have the extension installed, you should be able to "connect to host" and select the name of the host as specified in your SSH config.
