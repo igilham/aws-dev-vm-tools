@@ -1,0 +1,9 @@
+#!/bin/sh
+# usage: $0 -t TOKEN_CODE ACTION
+set -e
+
+AWS_DEV_INSTANCE_ID="SOME_ID" \
+  AWS_DEV_USER_ID="SOME_ID" \
+  AWS_DEV_ACCOUNT_ID="01234567890" \
+  AWS_DEV_STS_PROFILE="SOME_PROFILE_NAME" \
+  ~/bin/aws-dev-vm $@
