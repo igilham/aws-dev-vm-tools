@@ -31,7 +31,6 @@ var (
 
 func main() {
 	flag.Parse()
-	fmt.Printf("DEBUG: args, %s\n", flag.Args())
 	if len(*tokenCode) == 0 {
 		log.Fatal("No token code provided (use -t)")
 	}
@@ -88,7 +87,6 @@ func logIn() aws.Config {
 func getSessionToken(cfg aws.Config) (*aws.Config, error) {
 	svc := sts.NewFromConfig(cfg)
 	serialNumber := fmt.Sprintf("arn:aws:iam::%s:mfa/%s", *accountID, *userID)
-	log.Printf("DEBUG: MFA serial, %s\n", serialNumber)
 	input := sts.GetSessionTokenInput{
 		SerialNumber: &serialNumber,
 		TokenCode:    tokenCode,
@@ -147,9 +145,6 @@ func describeInstance(id string, client *ec2.Client) {
 	if err != nil {
 		log.Fatalf("Unable to describe instance, %v", err)
 	}
-	// if out.NextToken == nil {
-	// 	log.Fatalf("Found no instances")
-	// }
 
 	fmt.Printf("Instance ID: %s\n", *out.Reservations[0].Instances[0].InstanceId)
 	fmt.Printf("Public IP: %s\n", *out.Reservations[0].Instances[0].PublicIpAddress)
