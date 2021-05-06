@@ -1,4 +1,4 @@
-module github.com/igilham/aws-dev-vm
+module github.com/igilham/aws-dev-vm-tools
 
 go 1.16
 
